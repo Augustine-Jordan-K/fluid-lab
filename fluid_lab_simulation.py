@@ -36,7 +36,7 @@ if module == "Pitot Tube Flow":
         """)
 
     with st.expander("🖼️ Schematic Diagram"):
-        st.image("https://me.iitp.ac.in/Virtual-Fluid-Laboratory/pitot/images/pitot_tube_labelled.png", caption="Pitot Tube Setup", use_column_width=True)  # Replace with actual schematic URL
+        st.image("https://me.iitp.ac.in/Virtual-Fluid-Laboratory/pitot/images/pitot_tube_labelled.png", caption="Pitot Tube Setup\nCredit: IIT Patna", use_column_width=True)  # Replace with actual schematic URL
 
     # Simulation
     st.header("🔬 Simulation")
@@ -88,7 +88,7 @@ elif module == "Reynolds Number Visualization":
         """)
 
     with st.expander("🖼️ Schematic Diagram"):
-        st.image("https://me.iitp.ac.in/Virtual-Fluid-Laboratory/images/reynolds_labelled.png", caption="Flow Regimes in Pipe", use_column_width=True)  # Replace with actual schematic URL
+        st.image("https://me.iitp.ac.in/Virtual-Fluid-Laboratory/images/reynolds_labelled.png", caption="Flow Regimes in Pipe\nCredit: IIT Patna", use_column_width=True)  # Replace with actual schematic URL
 
     # Simulation
     st.header("🔬 Simulation")
