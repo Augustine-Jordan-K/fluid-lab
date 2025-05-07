@@ -66,8 +66,8 @@ if module == "Pitot Tube Flow":
     st.markdown(f"**Manometer Height (Δh):** {h_cm:.2f} cm")
     
     # Plot the manometer reading with the new scaled value
-    fig, ax = plt.subplots(figsize=(1, 2))
-    ax.bar([0], [h_cm], width=0.2, color='blue')
+    fig, ax = plt.subplots(figsize=(0.7, 1.4))
+    ax.bar([0], [h_cm], width=0.1, color='blue')
     ax.set_ylim(0, 2050)  # Increased max value for the manometer height
     ax.set_ylabel("Manometer Height (cm)")
     ax.set_xticks([])
