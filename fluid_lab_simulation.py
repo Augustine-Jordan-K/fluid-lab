@@ -57,7 +57,10 @@ if module == "Pitot Tube Flow":
     delta_p = 0.5 * fluid_density * velocity**2
     
     # Adjust manometer height to increase the reading up to 150 cm
-    h_cm = 250  # Increased scaling factor
+    # Convert pressure difference to manometer height (in cm)
+    h_m = delta_p / (fluid_density * g)
+    h_cm = h_m * 100  # Convert from meters to centimeters
+  # Increased scaling factor
     
     st.markdown(f"**Pressure Difference (ΔP):** {delta_p:.2f} Pa")
     st.markdown(f"**Manometer Height (Δh):** {h_cm:.2f} cm")
