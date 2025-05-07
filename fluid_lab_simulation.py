@@ -69,7 +69,7 @@ if module == "Pitot Tube Flow":
     fig, ax = plt.subplots(figsize=(0.7, 1.4))
     ax.bar([0], [h_cm], width=0.1, color='blue')
     ax.set_ylim(0, 2050)  # Increased max value for the manometer height
-    ax.set_ylabel("Manometer Height (cm)")
+    ax.set_ylabel("Height (cm)")
     ax.set_xticks([])
     ax.set_title("Manometer Reading")
     st.pyplot(fig)
