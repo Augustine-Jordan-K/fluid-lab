@@ -38,25 +38,30 @@ if module == "Pitot Tube Flow":
     with st.expander("🖼️ Schematic Diagram"):
         st.image("https://me.iitp.ac.in/Virtual-Fluid-Laboratory/pitot/images/pitot_tube_labelled.png", caption="Pitot Tube Setup\nCredit: IIT Patna", use_column_width=True)  # Replace with actual schematic URL
 
-    # Simulation
-    st.header("🔬 Simulation")
-    velocity = st.slider("Fluid Velocity (m/s)", 0.0, 20.0, 5.0, 0.1)
-    fluid_density = st.slider("Fluid Density (kg/m³)", 800.0, 1200.0, 1000.0, 10.0)
-    g = 9.81
+  
+ # Simulation
+st.header("🔬 Simulation")
+velocity = st.slider("Fluid Velocity (m/s)", 0.0, 20.0, 5.0, 0.1)
+fluid_density = st.slider("Fluid Density (kg/m³)", 800.0, 1200.0, 1000.0, 10.0)
+g = 9.81
 
-    delta_p = 0.5 * fluid_density * velocity**2
-    h_cm = delta_p / (fluid_density * g) * 100
+delta_p = 0.5 * fluid_density * velocity**2
 
-    st.markdown(f"**Pressure Difference (ΔP):** {delta_p:.2f} Pa")
-    st.markdown(f"**Manometer Height (Δh):** {h_cm:.2f} cm")
+# Adjust manometer height to increase the reading up to 150 cm
+h_cm = delta_p / (fluid_density * g) * 150  # Increased scaling factor
 
-    fig, ax = plt.subplots(figsize=(2, 5))
-    ax.bar([0], [h_cm], width=0.5, color='blue')
-    ax.set_ylim(0, 50)
-    ax.set_ylabel("Manometer Height (cm)")
-    ax.set_xticks([])
-    ax.set_title("Manometer Reading")
-    st.pyplot(fig)
+st.markdown(f"**Pressure Difference (ΔP):** {delta_p:.2f} Pa")
+st.markdown(f"**Manometer Height (Δh):** {h_cm:.2f} cm")
+
+# Plot the manometer reading with the new scaled value
+fig, ax = plt.subplots(figsize=(2, 5))
+ax.bar([0], [h_cm], width=0.5, color='blue')
+ax.set_ylim(0, 150)  # Increased max value for the manometer height
+ax.set_ylabel("Manometer Height (cm)")
+ax.set_xticks([])
+ax.set_title("Manometer Reading")
+st.pyplot(fig)
+
 
 # --- REYNOLDS NUMBER MODULE ---
 elif module == "Reynolds Number Visualization":
